@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_odoo_openai_bot,access_odoo_openai_bot,model_odoo_openai_bot,,1,0,0,0
+access_odoo_openai_processed,access_odoo_openai_processed,model_odoo_openai_processed,,1,1,1,1

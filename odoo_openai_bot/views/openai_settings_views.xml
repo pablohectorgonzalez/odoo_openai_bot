@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="res_config_settings_view_form_inherit_openai" model="ir.ui.view">
+    <field name="name">res.config.settings.inherit.openai</field>
+    <field name="model">res.config.settings</field>
+    <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+    <field name="arch" type="xml">
+      <div id="settings_container" position="inside">
+        <div class="app_settings_block">
+          <h2>OpenAI Bot</h2>
+          <div>
+            <field name="openai_api_key" widget="password"/>
+          </div>
+        </div>
+      </div>
+    </field>
+  </record>
+</odoo>
