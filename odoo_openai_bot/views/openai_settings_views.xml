@@ -5,14 +5,31 @@
     <field name="model">res.config.settings</field>
     <field name="inherit_id" ref="base.res_config_settings_view_form"/>
     <field name="arch" type="xml">
-      <div id="settings_container" position="inside">
-        <div class="app_settings_block">
-          <h2>OpenAI Bot</h2>
-          <div>
-            <field name="openai_api_key" widget="password"/>
-          </div>
-        </div>
-      </div>
+      <xpath expr="//form[@js_class='base_settings' or contains(concat(' ', normalize-space(@class), ' '), ' oe_form_configuration ')]" position="inside">
+                <div class="o_settings_container">
+                    <div class="settings">
+                        <div class="app_settings_block" name="openai_chat_settings" string="OpenAI Chat" data-string="OpenAI Chat">
+                            <h2>OpenAI Chat</h2>
+                            <div class="o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="openai_enabled"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="openai_enabled"/>
+                                    <div class="text-muted">
+                                        Activa el comando /ai en Discuss y conversación 1:1 con el bot
+                                    </div>
+
+                                    <group name="openai_settings_group">
+                                        <field name="openai_api_key" widget="password"/>
+                                        <field name="openai_model"/>
+                                    </group>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
     </field>
   </record>
 </odoo>
